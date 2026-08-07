@@ -1,0 +1,26 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Compilados
+dist/
+build/
+.next/
+out/
+
+# Variables de entorno — NUNCA subas claves de API
+.env
+.env.local
+.env*.local
+
+# Editores y sistema
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Registros
+*.log
+npm-debug.log*

@@ -1,0 +1,115 @@
+name: Validar entrega
+
+# Se ejecuta en cada Pull Request hacia main y en cada push a una rama de práctica.
+# No modifiques este archivo: es el que usa el docente para calificar.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: ['feat/**']
+
+jobs:
+  estructura:
+    name: Estructura y archivos obligatorios
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detectar carpetas de práctica
+        id: detectar
+        run: |
+          practicas=$(find . -maxdepth 1 -type d -name 'practica-*' | sort)
+          if [ -z "$practicas" ]; then
+            echo "::error::No se encontró ninguna carpeta practica-NN-nombre en la raíz."
+            exit 1
+          fi
+          echo "Prácticas encontradas:"
+          echo "$practicas"
+          echo "lista<<FIN" >> $GITHUB_OUTPUT
+          echo "$practicas" >> $GITHUB_OUTPUT
+          echo "FIN" >> $GITHUB_OUTPUT
+
+      - name: Verificar README.md e IA.md en cada práctica
+        run: |
+          fallo=0
+          for d in $(find . -maxdepth 1 -type d -name 'practica-*' | sort); do
+            for f in README.md IA.md; do
+              if [ ! -f "$d/$f" ]; then
+                echo "::error file=$d::Falta el archivo obligatorio $f en $d"
+                fallo=1
+              fi
+            done
+          done
+          exit $fallo
+
+      - name: Verificar que IA.md tenga contenido real
+        run: |
+          fallo=0
+          for f in $(find . -maxdepth 2 -name 'IA.md'); do
+            # Cuenta palabras excluyendo encabezados y líneas de plantilla
+            palabras=$(grep -v '^#' "$f" | grep -v '^\s*$' | grep -viE '^(\s*)(escribe|describe|completa|TODO|pendiente)' | wc -w)
+            if [ "$palabras" -lt 40 ]; then
+              echo "::error file=$f::IA.md tiene solo $palabras palabras de contenido real (mínimo 40). La declaración de uso de IA es obligatoria y debe ser específica."
+              fallo=1
+            fi
+          done
+          exit $fallo
+
+      - name: Verificar README de la raíz
+        run: |
+          if [ ! -f README.md ]; then
+            echo "::error::Falta el README.md de la raíz con tu perfil de jugador."
+            exit 1
+          fi
+          if ! grep -qiE 'practica|misión|mision' README.md; then
+            echo "::warning::El README de la raíz no parece enlazar tus prácticas."
+          fi
+
+  html:
+    name: Validez del HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar validador
+        run: npm install -g html-validate
+
+      - name: Validar archivos HTML
+        run: |
+          archivos=$(find . -name '*.html' -not -path './node_modules/*' -not -path './*/node_modules/*')
+          if [ -z "$archivos" ]; then
+            echo "No hay archivos HTML sueltos (normal si usas React o Next.js)."
+            exit 0
+          fi
+          html-validate $archivos
+
+  compilar:
+    name: Instalar y compilar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Buscar proyectos con package.json
+        run: |
+          proyectos=$(find . -maxdepth 2 -name 'package.json' -not -path './node_modules/*')
+          if [ -z "$proyectos" ]; then
+            echo "Sin proyectos de Node en esta entrega. Nada que compilar."
+            exit 0
+          fi
+          for p in $proyectos; do
+            dir=$(dirname "$p")
+            echo "──── Procesando $dir ────"
+            cd "$GITHUB_WORKSPACE/$dir"
+            npm install --no-audit --no-fund
+            if npm run | grep -q '^  build'; then
+              npm run build
+            else
+              echo "Sin script de build en $dir, se omite."
+            fi
+            cd "$GITHUB_WORKSPACE"
+          done
