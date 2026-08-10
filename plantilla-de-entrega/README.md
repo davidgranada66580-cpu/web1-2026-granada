@@ -1,14 +1,14 @@
-# Perfil de jugador — Programación Web 1
+# Perfil de jugador – Programación Web 1
 
-**Nombre:** <!-- tu nombre completo -->
-**Programa:** Ingeniería en Informática · cuarto semestre
-**Semestre:** 2026-2
-**Usuario de GitHub:** <!-- @tuusuario -->
+**Nombre:** David Alexander Granada López  
+**Programa:** Ingeniería en Informática  
+**Semestre:** 2026-2  
+**Usuario de GitHub:** davidgranada66580-cpu
 
 ## Sobre mí
 
-<!-- Dos o tres líneas: qué te interesa de la programación web, qué juego te
-     gustaría construir si pudieras elegir, con qué lenguajes ya trabajaste. -->
+Me gusta la programación web, la inteligencia artificial y crear proyectos prácticos.  
+Si pudiera elegir, me gustaría construir un juego estilo plataforma 2D con personajes personalizables y niveles generados por IA.
 
 ## Progreso de la campaña
 
