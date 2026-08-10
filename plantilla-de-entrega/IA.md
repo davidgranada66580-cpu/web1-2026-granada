@@ -1,40 +1,22 @@
 # Declaración de uso de IA
 
-> Obligatoria en todas las prácticas. Si usaste un asistente, descríbelo aquí con
-> precisión. Si NO usaste ninguno, escribe eso y explica cómo resolviste la parte
-> más difícil por tu cuenta — también cuenta como declaración válida.
->
-> Recuerda: código de IA sin declarar se califica en CERO y no admite reintento.
-> Declararlo honestamente NO baja tu nota. Lo que se evalúa es tu capacidad de auditar.
-
 ## Herramientas que usé
-<!-- Ej.: GitHub Copilot en VS Code, ChatGPT, Claude, Cursor. Indica también si no usaste ninguna. -->
+Grok (xAI)
 
 ## Qué le pedí
-<!-- Escribe el prompt real, no un resumen idealizado -->
-
-```
-```
+Ayuda para entender errores de Git y de la terminal de Windows, y para organizar mejor el contenido del README.md e IA.md.
 
 ## Qué me devolvió
-<!-- Pega el fragmento relevante -->
-
-```javascript
-```
+Explicaciones de los mensajes de error y sugerencias de comandos para solucionar problemas con carpetas y con Git.
 
 ## Qué estaba mal
-<!-- La parte más importante del documento. Sé específico: qué falla, en qué caso,
-     por qué el código parecía correcto pero no lo era. Si de verdad no encontraste
-     ningún error, explica cómo lo verificaste (qué casos probaste). -->
+Tuve problemas al principio con la estructura de carpetas y con algunos comandos de Git que no funcionaban como esperaba.
 
 ## Qué corregí y por qué
-<!-- Tu código final y el razonamiento del cambio -->
-
-```javascript
-```
+Seguí las indicaciones, entendí los errores y apliqué los comandos correctos para dejar el repositorio limpio y en la rama adecuada.
 
 ## Qué escribí yo desde cero
-<!-- Qué partes no delegaste, y por qué decidiste no delegarlas -->
+El contenido del perfil de jugador en el README.md y la redacción de esta declaración.
 
 ## Reflexión
-<!-- ¿Te ahorró tiempo de verdad, o lo perdiste depurando? ¿Volverías a usarlo para esto? -->
+La IA me sirvió como apoyo para no quedarme trabado, pero la mayor parte del proceso (entender la práctica, escribir el perfil y revisar que todo quedara bien) lo hice yo.
