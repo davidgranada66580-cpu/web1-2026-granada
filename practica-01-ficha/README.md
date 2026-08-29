@@ -11,9 +11,10 @@ Construí una ficha de personaje original en HTML puro, sin CSS. El personaje se
 Comando local: start practica-01-ficha/src/index.html
 
 ## URL desplegada
-Todavía no está desplegada en internet. Por ahora se abre como archivo local:
+https://davidgranada66580-cpu.github.io/web1-2026-granada/practica-01-ficha/src/index.html
 
-`practica-01-ficha/src/index.html`
+Misión opcional: Lighthouse Accesibilidad 100/100.
+La captura está en `src/lighthouse-100.png`.
 
 ## Qué aprendí
 Aprendí a usar etiquetas semánticas como `header`, `main`, `section`, `article` y `footer` en lugar de armar todo con `div`. También entendí por qué el `label` debe ir unido al campo con `for` e `id`, y por qué la imagen necesita un `alt` descriptivo.
