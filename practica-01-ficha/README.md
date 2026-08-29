@@ -1,16 +1,22 @@
 # practica-01-ficha
 
 ## Qué hice
-<!-- Dos o tres líneas sobre qué construiste -->
+Construí una ficha de personaje original en HTML puro, sin CSS. El personaje se llama Kael “Ceniza” Restrepo y la página tiene nombre, imagen, tabla de estadísticas, lista de habilidades, historia con encabezados y un formulario de contacto.
 
 ## Cómo correrlo
-<!-- Los comandos exactos, o el enlace si es una página estática -->
+1. Entra a la carpeta `practica-01-ficha/src`
+2. Descarga o abre el archivo `index.html` con el navegador
+3. También se puede ver desde GitHub abriendo el archivo y usando la vista previa, o descargándolo
+
+Comando local: start practica-01-ficha/src/index.html
 
 ## URL desplegada
-<!-- El enlace donde funciona y se puede jugar -->
+Todavía no está desplegada en internet. Por ahora se abre como archivo local:
+
+`practica-01-ficha/src/index.html`
 
 ## Qué aprendí
-<!-- Lo que te costó, lo que resolviste y cómo -->
+Aprendí a usar etiquetas semánticas como `header`, `main`, `section`, `article` y `footer` en lugar de armar todo con `div`. También entendí por qué el `label` debe ir unido al campo con `for` e `id`, y por qué la imagen necesita un `alt` descriptivo.
 
 ## Qué no alcancé a hacer
-<!-- Sé honesto: esto no baja la nota y ayuda a que recibas mejores comentarios -->
+Todavía no subí la página a un hosting con URL pública. Tampoco hice todavía la misión opcional de Lighthouse.
