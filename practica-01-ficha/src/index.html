@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de personaje: Kael Restrepo</title>
+</head>
+<body>
+  <header>
+    <h1>Kael “Ceniza” Restrepo</h1>
+    <p>Rastreador de montaña · Clase Explorador</p>
+  </header>
+
+  <main>
+    <figure>
+      <img
+        src="https://picsum.photos/id/1015/640/420"
+        width="640"
+        height="420"
+        alt="Joven explorador colombiano con chaqueta gastada, mirando un valle montañoso cubierto de niebla al atardecer">
+      <figcaption>Kael observando la cordillera antes de iniciar un rastreo.</figcaption>
+    </figure>
+
+    <section>
+      <h2>Estadísticas</h2>
+      <table>
+        <caption>Valores base del personaje</caption>
+        <thead>
+          <tr>
+            <th scope="col">Atributo</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Vida</th>
+            <td>82</td>
+            <td>Resiste caídas y frío de altura</td>
+          </tr>
+          <tr>
+            <th scope="row">Energía</th>
+            <td>70</td>
+            <td>Se agota si corre demasiado tiempo</td>
+          </tr>
+          <tr>
+            <th scope="row">Agilidad</th>
+            <td>88</td>
+            <td>Se mueve bien entre piedras y laderas</td>
+          </tr>
+          <tr>
+            <th scope="row">Fuerza</th>
+            <td>61</td>
+            <td>Suficiente para cargar equipo, no para pelear de frente</td>
+          </tr>
+          <tr>
+            <th scope="row">Percepción</th>
+            <td>94</td>
+            <td>Detecta huellas, sonidos y cambios de clima</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+      <ul>
+        <li>Rastro de Ceniza: sigue huellas incluso después de una lluvia ligera.</li>
+        <li>Silencio de Niebla: reduce el ruido al caminar en zonas húmedas.</li>
+        <li>Brújula Interna: no se pierde en bosques que ya recorrió una vez.</li>
+        <li>Fogata Rápida: enciende una llama pequeña con materiales secos.</li>
+      </ul>
+    </section>
+
+    <article>
+      <h2>Historia</h2>
+
+      <h3>Origen</h3>
+      <p>
+        Kael creció entre caminos de tierra y mañanas frías. Desde pequeño aprendió a leer el terreno:
+        cuál piedra estaba suelta, qué rama se había quebrado hace poco y por dónde había pasado un animal.
+      </p>
+      <p>
+        No era el más fuerte del pueblo ni el más rápido. Su ventaja era otra: se quedaba quieto,
+        observaba y no se lanzaba sin entender primero el lugar.
+      </p>
+
+      <h3>El apodo</h3>
+      <p>
+        Le dicen “Ceniza” porque una noche salvó a un grupo perdido encendiendo señales de humo
+        en tres puntos distintos de la montaña. El humo se vio desde el valle y sirvió de guía.
+      </p>
+      <p>
+        Desde entonces lo buscan cuando alguien desaparece en la cordillera o cuando hay que
+        abrir una ruta que nadie quiere tomar de noche.
+      </p>
+
+      <h3>Motivación</h3>
+      <p>
+        Kael no pelea por fama. Quiere mapear senderos olvidados y dejar marcas claras para
+        que otros no se pierdan como se perdió su hermano años atrás.
+      </p>
+    </article>
+
+    <section>
+      <h2>Contacto</h2>
+      <p>Si quieres pedir una ruta, una guía o reportar un avistamiento, completa este formulario.</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="nombre">Nombre</label><br>
+          <input type="text" id="nombre" name="nombre" required>
+        </p>
+
+        <p>
+          <label for="correo">Correo</label><br>
+          <input type="email" id="correo" name="correo" required>
+        </p>
+
+        <p>
+          <label for="asunto">Asunto</label><br>
+          <select id="asunto" name="asunto">
+            <option value="ruta">Pedir una ruta</option>
+            <option value="guia">Solicitar guía</option>
+            <option value="reporte">Reportar un avistamiento</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="mensaje">Mensaje</label><br>
+          <textarea id="mensaje" name="mensaje" rows="5" cols="40" required></textarea>
+        </p>
+
+        <p>
+          <button type="submit">Enviar mensaje</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ficha de personaje creada para Programación Web 1 · Misión 01</p>
+  </footer>
+</body>
+</html>
